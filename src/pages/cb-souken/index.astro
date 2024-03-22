@@ -1,0 +1,31 @@
+---
+import Cbs from "@/layouts/Cbs.astro";
+import { contentfulClient } from "@/lib/contentful";
+
+const entries = await contentfulClient.getEntries({
+  content_type: "cbs-article",
+});
+
+const posts = entries.items.map((item) => {
+  const { title, slug } = item.fields;
+  return {
+    title,
+    slug,
+  };
+});
+---
+
+<Cbs>
+  <h1>Cbs</h1>
+  <ul>
+    {
+      posts.map((post) => (
+        <li>
+          <a href={`/cb-souken/post/${post.slug}/`}>
+            <h4 class="title">{post.title}</h4>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</Cbs>

@@ -1,0 +1,26 @@
+---
+export function getStaticPaths() {
+  return [
+    { params: { redirect: "about" } },
+    { params: { redirect: "shokusaka" } },
+    { params: { redirect: "seminar" } },
+  ];
+}
+
+const { redirect } = Astro.params;
+---
+
+<html lang="ja">
+  <head>
+    <meta property="og:title" content="redirect..." />
+    <meta
+      http-equiv="refresh"
+      content={"0; url=https://corporate.craft-bank.com/" + redirect}
+    />
+    <link
+      rel="canonical"
+      href={"https://corporate.craft-bank.com/" + redirect}
+    />
+  </head>
+  <body><p>redirect...</p></body>
+</html>
