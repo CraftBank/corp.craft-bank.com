@@ -1,5 +1,7 @@
 # corp.craft-bank.com
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1a31f8ad-7943-4d8a-88b7-99f67ffdecb3/deploy-status)](https://app.netlify.com/sites/corp-craft-bank/deploys)
+
 以下のページについてのソースコードです。
 
 - [クラフトバンクオフィス](https://corp.craft-bank.com/cbo)
